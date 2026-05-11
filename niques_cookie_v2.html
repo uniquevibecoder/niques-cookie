@@ -1,0 +1,644 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500;600;700&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+#nq{position:relative;overflow:hidden;font-family:'Quicksand',sans-serif;min-height:100vh;background:linear-gradient(150deg,#FFF9F0 0%,#F3E8FF 55%,#FFF0F9 100%)}
+.brand{font-family:'Pacifico',cursive!important}
+h2,h3,h4{font-family:'Quicksand',sans-serif;font-weight:700}
+.nq-part{position:absolute;top:-60px;pointer-events:none;animation:nqfall linear infinite;user-select:none;z-index:3}
+.nq-part.bg{opacity:.15;animation-duration:14s!important;z-index:1}
+@keyframes nqfall{0%{transform:translateY(-60px) rotate(0deg)}100%{transform:translateY(1400px) rotate(720deg)}}
+#nq-intro{position:absolute;inset:0;min-height:600px;background:linear-gradient(135deg,#7B2FBE,#A855F7 45%,#EC4899);z-index:600;display:flex;align-items:center;justify-content:center;transition:opacity .9s,visibility .9s}
+#nq-intro.gone{opacity:0;visibility:hidden;pointer-events:none}
+#nq-in{font-family:'Pacifico',cursive;font-size:clamp(26px,7vw,60px);color:#fff;text-align:center;opacity:0;transform:translateY(44px) scale(.82);transition:all 1.1s cubic-bezier(.34,1.56,.64,1);padding:16px;text-shadow:0 4px 20px rgba(0,0,0,.2)}
+#nq-in.show{opacity:1;transform:translateY(0) scale(1)}
+#nq-ie{font-size:68px;display:block;opacity:0;transition:all .9s .2s;transform:scale(.4)}
+#nq-ie.show{opacity:1;transform:scale(1)}
+.nq-ann{background:linear-gradient(90deg,#7B2FBE,#EC4899);color:#fff;text-align:center;padding:9px 20px;font-size:12px;font-weight:700;letter-spacing:.3px;position:relative;z-index:5;font-family:'Quicksand',sans-serif}
+.nq-nav{background:linear-gradient(135deg,#6D28D9,#7C3AED,#9333EA);padding:0 20px;box-shadow:0 4px 28px rgba(109,40,217,.35);position:relative;z-index:5}
+.nq-ni{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:10px;height:62px;flex-wrap:wrap}
+.nq-logo{font-family:'Pacifico',cursive;font-size:19px;color:#fff;cursor:pointer;white-space:nowrap;flex-shrink:0;text-shadow:0 2px 8px rgba(0,0,0,.15)}
+.nq-vb{background:rgba(255,255,255,.18);padding:5px 13px;border-radius:20px;font-size:11px;color:#fff;font-weight:700;white-space:nowrap;flex-shrink:0}
+.nq-nl{display:flex;align-items:center;gap:2px;margin-left:auto;flex-wrap:wrap}
+.nq-n{cursor:pointer;padding:7px 13px;border-radius:20px;color:#fff;font-weight:700;font-size:12px;transition:background .2s;user-select:none;border:none;background:transparent;font-family:'Quicksand',sans-serif}
+.nq-n:hover,.nq-n.act{background:rgba(255,255,255,.22)}
+.nq-cb{position:relative}
+.nq-cbd{position:absolute;top:1px;right:1px;background:#EC4899;color:#fff;border-radius:50%;width:16px;height:16px;font-size:9px;font-weight:900;display:flex;align-items:center;justify-content:center;pointer-events:none}
+.nq-pg{display:none;position:relative;z-index:2}
+.nq-pg.act{display:block}
+.nq-hero{min-height:84vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:50px 20px}
+.nq-ht{font-family:'Pacifico',cursive;font-size:clamp(34px,8vw,76px);background:linear-gradient(135deg,#6D28D9,#EC4899,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.2;margin-bottom:14px;text-shadow:none}
+.nq-he{font-size:68px;margin-bottom:18px;display:block;animation:nqfl 3.2s ease-in-out infinite}
+@keyframes nqfl{0%,100%{transform:translateY(0)}50%{transform:translateY(-13px)}}
+.nq-sec{padding:50px 20px;max-width:1100px;margin:0 auto}
+.nq-st{font-family:'Pacifico',cursive;font-size:clamp(20px,4vw,32px);color:#6D28D9;margin-bottom:24px;text-align:center}
+.nq-g4{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.nq-g3{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+.nq-card{background:rgba(255,255,255,.93);border-radius:22px;padding:22px;box-shadow:0 6px 32px rgba(109,40,217,.1);border:1px solid rgba(139,92,246,.14);transition:transform .2s,box-shadow .2s}
+.nq-card:hover{transform:translateY(-4px);box-shadow:0 14px 44px rgba(109,40,217,.18)}
+.nq-pc{background:rgba(255,255,255,.93);border-radius:22px;padding:0 0 18px;box-shadow:0 6px 32px rgba(109,40,217,.1);border:1px solid rgba(139,92,246,.14);transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column;overflow:hidden}
+.nq-pc:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(109,40,217,.18)}
+.nq-pc.so{opacity:.68}
+.nq-pimg{height:150px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#FFF9F0,#F3E8FF);overflow:hidden;border-radius:22px 22px 0 0}
+.nq-pimg img{width:100%;height:100%;object-fit:cover}
+.nq-pb{padding:14px 18px 0;display:flex;flex-direction:column;flex:1;gap:7px}
+.nq-pn{font-family:'Quicksand',sans-serif;font-size:17px;font-weight:700;color:#1F2937}
+.nq-pd{font-size:12px;color:#6B7280;line-height:1.6;flex:1}
+.nq-pf{display:flex;align-items:center;justify-content:space-between;margin-top:4px}
+.nq-pp{font-family:'Pacifico',cursive;font-size:20px;color:#6D28D9}
+.nq-ps{font-size:10px;color:#9CA3AF}
+.nq-stg{display:inline-block;padding:3px 11px;border-radius:20px;font-size:10px;font-weight:700}
+.nq-ok{background:#D1FAE5;color:#065F46}.nq-lw{background:#FEF3C7;color:#92400E}.nq-out{background:#FEE2E2;color:#991B1B}
+.nq-ft{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+.nq-ftb{padding:7px 18px;border-radius:22px;border:2px solid #6D28D9;background:transparent;color:#6D28D9;font-family:'Quicksand',sans-serif;font-weight:700;cursor:pointer;font-size:12px;transition:all .2s}
+.nq-ftb.act,.nq-ftb:hover{background:#6D28D9;color:#fff}
+.bp{background:linear-gradient(135deg,#F59E0B,#EC4899);color:#fff;border:none;padding:12px 28px;border-radius:28px;font-weight:700;cursor:pointer;font-family:'Quicksand',sans-serif;font-size:14px;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 18px rgba(236,72,153,.35)}
+.bp:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(236,72,153,.5)}
+.bp:disabled{opacity:.4;cursor:not-allowed;transform:none}
+.bs{background:transparent;color:#6D28D9;border:2px solid #6D28D9;padding:10px 24px;border-radius:28px;font-weight:700;cursor:pointer;font-family:'Quicksand',sans-serif;font-size:14px;transition:all .2s}
+.bs:hover{background:#6D28D9;color:#fff}
+.bsm{padding:7px 16px!important;font-size:12px!important;border-radius:18px!important}
+.bgh{background:rgba(109,40,217,.1);color:#6D28D9;border:none;padding:7px 13px;border-radius:14px;font-weight:700;cursor:pointer;font-family:'Quicksand',sans-serif;font-size:12px;transition:all .2s}
+.bgh:hover{background:rgba(109,40,217,.2)}
+.bdg{background:#FEE2E2;color:#991B1B;border:none;padding:6px 12px;border-radius:10px;font-weight:700;cursor:pointer;font-family:'Quicksand',sans-serif;font-size:11px}
+.bdg:hover{background:#FECACA}
+.nq-rv{background:rgba(255,255,255,.93);border-radius:18px;padding:18px;box-shadow:0 4px 20px rgba(109,40,217,.09);border:1px solid rgba(139,92,246,.14)}
+.nq-ci{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.93);border-radius:16px;padding:14px 18px;box-shadow:0 4px 18px rgba(109,40,217,.08);border:1px solid rgba(139,92,246,.14);margin-bottom:12px;flex-wrap:wrap}
+.nq-qb{width:30px;height:30px;border-radius:50%;border:2px solid #6D28D9;background:transparent;color:#6D28D9;font-weight:900;font-size:17px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;line-height:1;padding:0}
+.nq-qb:hover{background:#6D28D9;color:#fff}
+.nq-cl{display:block;background:rgba(255,255,255,.93);border-radius:22px;padding:28px 22px;text-align:center;box-shadow:0 6px 28px rgba(109,40,217,.1);text-decoration:none;transition:transform .2s,box-shadow .2s;border:2px solid transparent}
+.nq-cl:hover{transform:translateY(-5px);box-shadow:0 14px 40px rgba(109,40,217,.18)}
+.nq-sc{text-align:center;padding:60px 20px}
+.nq-si{font-size:70px;display:block;margin-bottom:20px;animation:boun .6s}
+@keyframes boun{0%,100%{transform:scale(1)}40%{transform:scale(1.18)}}
+.nq-ml{position:absolute;inset:0;min-height:100%;background:rgba(0,0,0,.52);backdrop-filter:blur(6px);z-index:400;display:none;align-items:flex-start;justify-content:center;padding:40px 16px}
+.nq-ml.open{display:flex}
+.nq-mo{background:#fff;border-radius:26px;padding:28px;width:100%;max-width:430px;position:relative;box-shadow:0 24px 70px rgba(0,0,0,.22);animation:mIn .35s cubic-bezier(.34,1.56,.64,1)}
+@keyframes mIn{from{opacity:0;transform:translateY(30px) scale(.92)}to{opacity:1;transform:none}}
+.nq-mx{position:absolute;top:14px;right:14px;background:none;border:none;font-size:20px;cursor:pointer;color:#9CA3AF;line-height:1}
+.nq-mx:hover{color:#1F2937}
+.nq-mo h2{font-family:'Pacifico',cursive;color:#6D28D9;font-size:22px;margin-bottom:5px}
+.nq-mo p.sub{color:#9CA3AF;font-size:12px;margin-bottom:16px}
+.nq-fg{margin-bottom:11px}
+.nq-fg label{display:block;font-size:11px;font-weight:700;color:#374151;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px;font-family:'Quicksand',sans-serif}
+.nq-fg input,.nq-fg textarea,.nq-fg select{width:100%;padding:10px 14px;border:2px solid #EDE9FE;border-radius:12px;font-family:'Quicksand',sans-serif;font-size:13px;outline:none;transition:border-color .2s;background:#fff;color:#1F2937}
+.nq-fg input:focus,.nq-fg textarea:focus{border-color:#6D28D9}
+.nq-fg textarea{resize:vertical;height:80px}
+.nq-gb{width:100%;padding:11px;background:#fff;border:2px solid #E5E7EB;border-radius:12px;font-family:'Quicksand',sans-serif;font-size:13px;font-weight:700;color:#374151;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:border-color .2s;margin-bottom:14px}
+.nq-gb:hover{border-color:#6D28D9}
+.nq-err{color:#EF4444;font-size:12px;font-weight:700;padding:7px 12px;background:#FEF2F2;border-radius:10px;margin-bottom:10px;display:none}
+/* CAPTCHA */
+.nq-cap{background:linear-gradient(135deg,#F3E8FF,#FFF0F9);border-radius:14px;padding:13px 16px;margin-bottom:13px;border:2px solid #EDE9FE}
+.nq-cap-title{font-size:10px;font-weight:700;color:#6D28D9;margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px;display:flex;align-items:center;gap:6px}
+.nq-cap-q{background:#fff;border-radius:12px;padding:10px 16px;display:inline-flex;align-items:center;gap:8px;margin-bottom:10px;border:2px solid #EDE9FE;font-size:20px;font-weight:700;color:#6D28D9;font-family:'Quicksand',sans-serif}
+.nq-cap-q span{font-family:'Pacifico',cursive;font-size:22px;color:#EC4899}
+.nq-cap-ref{background:none;border:none;cursor:pointer;font-size:16px;color:#9CA3AF;padding:2px 6px;border-radius:8px;font-family:'Quicksand',sans-serif;transition:all .2s}
+.nq-cap-ref:hover{background:#EDE9FE;color:#6D28D9}
+.nq-cap input{width:100%;padding:9px 14px;border:2px solid #EDE9FE;border-radius:12px;font-family:'Quicksand',sans-serif;font-size:14px;font-weight:700;outline:none;transition:border-color .2s;background:#fff;color:#1F2937}
+.nq-cap input:focus{border-color:#6D28D9}
+.nq-stars{color:#F59E0B;letter-spacing:1px}
+.nq-ste{color:#D1D5DB}
+.nq-stat{background:rgba(255,255,255,.93);border-radius:18px;padding:18px;text-align:center;box-shadow:0 4px 20px rgba(109,40,217,.1);border:1px solid rgba(139,92,246,.14)}
+.nq-snum{font-family:'Pacifico',cursive;font-size:30px;line-height:1.1}
+.nq-slbl{font-size:10px;color:#6B7280;font-weight:700;margin-top:4px;text-transform:uppercase;letter-spacing:.5px}
+.nq-adt{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+.nq-at{padding:9px 20px;border-radius:20px;border:2px solid #6D28D9;background:transparent;color:#6D28D9;font-family:'Quicksand',sans-serif;font-weight:700;cursor:pointer;font-size:12px;transition:all .2s}
+.nq-at.act{background:#6D28D9;color:#fff}
+.nq-pr{background:rgba(255,255,255,.93);border-radius:16px;padding:14px 18px;display:flex;align-items:center;gap:14px;box-shadow:0 3px 16px rgba(109,40,217,.08);border:1px solid rgba(139,92,246,.14);margin-bottom:10px;flex-wrap:wrap}
+.nq-ar{background:rgba(255,255,255,.93);border-radius:16px;padding:14px 18px;box-shadow:0 3px 16px rgba(109,40,217,.08);border:1px solid rgba(139,92,246,.14);margin-bottom:10px}
+.nq-sbw{width:90px;height:6px;background:#E5E7EB;border-radius:4px;overflow:hidden;flex-shrink:0}
+.nq-sbr{height:100%;border-radius:4px;transition:width .4s}
+.nq-bs{background:#fff;border-radius:18px;padding:16px 14px;text-align:center;box-shadow:0 4px 20px rgba(109,40,217,.1);border:1px solid rgba(139,92,246,.14);width:145px;flex-shrink:0;overflow:hidden}
+.nq-bsimg{height:80px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#FFF9F0,#F3E8FF);border-radius:12px;margin-bottom:8px;overflow:hidden}
+.nq-bsimg img{width:100%;height:100%;object-fit:cover}
+.nq-pv{background:linear-gradient(135deg,#6D28D9,#EC4899);border-radius:16px;padding:20px;color:#fff;margin-bottom:16px}
+#nq-toast{position:absolute;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);background:#1F2937;color:#fff;padding:11px 22px;border-radius:40px;font-size:12px;font-weight:700;z-index:800;transition:transform .4s cubic-bezier(.34,1.56,.64,1);white-space:nowrap;box-shadow:0 8px 30px rgba(0,0,0,.25);font-family:'Quicksand',sans-serif}
+#nq-toast.show{transform:translateX(-50%) translateY(0)}
+.nq-foot{background:linear-gradient(135deg,#6D28D9,#9333EA);color:#fff;text-align:center;padding:28px 20px;font-family:'Quicksand',sans-serif;margin-top:50px;position:relative;z-index:2}
+.nq-foot h3{font-family:'Pacifico',cursive;font-size:22px;margin-bottom:6px}
+.img-up-btn{background:linear-gradient(135deg,#EDE9FE,#FFF0F9);color:#6D28D9;border:2px dashed #C4B5FD;padding:10px 18px;border-radius:14px;font-family:'Quicksand',sans-serif;font-weight:700;font-size:13px;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:6px}
+.img-up-btn:hover{background:linear-gradient(135deg,#DDD6FE,#FCE7F3);border-color:#A78BFA}
+.img-prev-box{width:90px;height:90px;border-radius:14px;overflow:hidden;border:2px dashed #EDE9FE;display:flex;align-items:center;justify-content:center;background:#FFF9F0;flex-shrink:0;font-size:44px}
+.img-prev-box img{width:100%;height:100%;object-fit:cover;display:none}
+@media(max-width:600px){.nq-ni{gap:4px}.nq-n{padding:6px 9px;font-size:11px}.nq-logo{font-size:16px}.nq-vb{display:none}.nq-g3{grid-template-columns:1fr}}
+</style>
+
+<div id="nq">
+<!-- Particles injected by JS -->
+<div id="nq-intro">
+  <div style="text-align:center">
+    <span id="nq-ie">🍪</span>
+    <div id="nq-in">Nique's Cookie</div>
+    <p style="color:rgba(255,255,255,.8);font-size:13px;margin-top:8px;font-family:'Quicksand',sans-serif;font-weight:600">Baked with love, delivered with joy ✨</p>
+  </div>
+</div>
+<div id="nq-toast"></div>
+<div class="nq-ann" id="nq-ann">🎉 Free delivery on orders above ₹500! Use SWEET10 for 10% off your first order.</div>
+<nav class="nq-nav">
+  <div class="nq-ni">
+    <span class="nq-logo" onclick="P('home')">🍪 Nique's Cookie</span>
+    <span class="nq-vb" id="nq-vc">👥 247 online</span>
+    <div class="nq-nl">
+      <button class="nq-n act" id="nq-nh" onclick="P('home')">Home</button>
+      <button class="nq-n" id="nq-nm" onclick="P('menu')">Menu</button>
+      <button class="nq-n" id="nq-nc" onclick="P('contact')">Contact</button>
+      <button class="nq-n nq-cb" onclick="P('cart')">🛒<span class="nq-cbd" id="nq-bd" style="display:none">0</span></button>
+      <button class="nq-n" id="nq-ub" onclick="OL()">Sign In</button>
+      <button class="nq-n" style="font-size:11px;opacity:.6" title="Admin" onclick="OAL()">🔒</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HOME -->
+<div id="pg-home" class="nq-pg act">
+  <div class="nq-hero">
+    <span class="nq-he">🍪</span>
+    <h1 class="nq-ht" id="nq-hname">Nique's Cookie</h1>
+    <p style="font-size:clamp(14px,3vw,19px);color:#7C3AED;font-weight:700;margin-bottom:10px" id="nq-htag">Baked with love, delivered with joy ✨</p>
+    <p style="font-size:14px;color:#6B7280;max-width:460px;margin:0 auto 30px;line-height:1.7" id="nq-hdesc">Handcrafted cookies made fresh daily, delivered to your door. Premium ingredients, unforgettable flavours.</p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center">
+      <button class="bp" onclick="P('menu')">🛍️ Shop Now</button>
+      <button class="bs" onclick="P('contact')">📬 Contact Us</button>
+    </div>
+  </div>
+  <div style="background:rgba(237,233,254,.35);padding:50px 20px">
+    <div class="nq-sec" style="padding:0">
+      <h2 class="nq-st">Why Choose Us?</h2>
+      <div class="nq-g4">
+        <div class="nq-card" style="text-align:center"><div style="font-size:42px;margin-bottom:11px">🧁</div><h3 style="color:#6D28D9;margin-bottom:7px;font-size:16px">Made Fresh Daily</h3><p style="color:#6B7280;font-size:13px;line-height:1.6">Every cookie baked fresh on the day of your order, never frozen.</p></div>
+        <div class="nq-card" style="text-align:center"><div style="font-size:42px;margin-bottom:11px">🚀</div><h3 style="color:#6D28D9;margin-bottom:7px;font-size:16px">Fast Delivery</h3><p style="color:#6B7280;font-size:13px;line-height:1.6">Quick and reliable delivery right to your doorstep.</p></div>
+        <div class="nq-card" style="text-align:center"><div style="font-size:42px;margin-bottom:11px">💜</div><h3 style="color:#6D28D9;margin-bottom:7px;font-size:16px">Made with Love</h3><p style="color:#6B7280;font-size:13px;line-height:1.6">Premium ingredients and genuine care in every batch.</p></div>
+        <div class="nq-card" style="text-align:center"><div style="font-size:42px;margin-bottom:11px">✨</div><h3 style="color:#6D28D9;margin-bottom:7px;font-size:16px">Custom Orders</h3><p style="color:#6B7280;font-size:13px;line-height:1.6">Gift boxes, wedding cookies? We make dreams delicious!</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="nq-sec">
+    <h2 class="nq-st">Bestsellers 🏆</h2>
+    <p style="text-align:center;color:#6B7280;margin-bottom:26px;font-size:14px">Customers just can't get enough of these!</p>
+    <div id="nq-bs" style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center"></div>
+    <div style="text-align:center;margin-top:30px"><button class="bp" onclick="P('menu')">View Full Menu →</button></div>
+  </div>
+</div>
+
+<!-- MENU -->
+<div id="pg-menu" class="nq-pg">
+  <div class="nq-sec">
+    <h2 class="nq-st">Our Cookie Menu 🍪</h2>
+    <div class="nq-ft" id="nq-ftabs"></div>
+    <div id="nq-pgrid" class="nq-g3"></div>
+    <div style="margin-top:50px">
+      <h2 class="nq-st">Customer Love 💬</h2>
+      <div id="nq-rvg" class="nq-g3" style="margin-bottom:30px"></div>
+      <div id="nq-rvf"></div>
+    </div>
+  </div>
+</div>
+
+<!-- CART -->
+<div id="pg-cart" class="nq-pg">
+  <div class="nq-sec" style="max-width:700px">
+    <h2 class="nq-st" style="text-align:left">Your Cart 🛒</h2>
+    <div id="nq-cc"></div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div id="pg-contact" class="nq-pg">
+  <div class="nq-sec" style="max-width:840px;margin:0 auto">
+    <h2 class="nq-st">Get in Touch 💌</h2>
+    <p style="text-align:center;color:#6B7280;margin-bottom:34px;font-size:14px">Reach out for orders, custom requests, or just to say hi! 🍪</p>
+    <div id="nq-clk" class="nq-g3"></div>
+    <div class="nq-card" style="margin-top:26px;text-align:center"><p style="color:#6B7280;line-height:1.8;font-size:14px">For bulk orders, wedding cookie boxes, or gift hampers, contact via WhatsApp or email.<br><strong style="color:#6D28D9">We typically respond within 2 hours! ⚡</strong></p></div>
+  </div>
+</div>
+
+<!-- ADMIN -->
+<div id="pg-admin" class="nq-pg">
+  <div class="nq-sec">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:8px">
+      <h2 style="font-family:'Pacifico',cursive;font-size:26px;color:#6D28D9">⚙️ Admin Dashboard</h2>
+      <button class="bdg" onclick="aOut()">Logout</button>
+    </div>
+    <p style="color:#6B7280;margin-bottom:24px;font-size:14px">Welcome back! Here's everything at Nique's Cookie.</p>
+    <div class="nq-adt">
+      <button class="nq-at act" onclick="AT('ov')">📊 Overview</button>
+      <button class="nq-at" onclick="AT('pr')">📦 Products</button>
+      <button class="nq-at" onclick="AT('rv')">💬 Reviews</button>
+      <button class="nq-at" onclick="AT('st')">⚙️ Settings</button>
+    </div>
+    <div id="nq-adc"></div>
+  </div>
+</div>
+
+<!-- LOGIN MODAL -->
+<div id="nq-lm" class="nq-ml">
+  <div class="nq-mo">
+    <button class="nq-mx" onclick="CL()">✕</button>
+    <h2 id="nq-lmt">Welcome Back! 🍪</h2>
+    <p class="sub" id="nq-lms">Sign in to place your order and track it</p>
+    <button class="nq-gb" onclick="gLg()"><span style="font-size:17px;font-weight:900;color:#4285F4">G</span>Continue with Google</button>
+    <div style="text-align:center;color:#E5E7EB;font-size:11px;margin:0 0 13px">— or —</div>
+    <div id="nq-snf" style="display:none" class="nq-fg"><label>Your Name</label><input id="ln" placeholder="e.g. Priya Sharma"/></div>
+    <div class="nq-fg"><label>Email</label><input type="email" id="le" placeholder="you@email.com"/></div>
+    <div class="nq-fg"><label>Password</label><input type="password" id="lp" placeholder="••••••••"/></div>
+    <!-- CAPTCHA -->
+    <div class="nq-cap">
+      <div class="nq-cap-title">🤖 Prove you're human — Cookie Math!</div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <div class="nq-cap-q">🍪 <span id="ca">?</span> <span style="color:#9CA3AF;font-size:16px">+</span> <span id="cb">?</span> <span style="color:#9CA3AF;font-size:16px">=</span> <span style="color:#EC4899">?</span></div>
+        <button class="nq-cap-ref" onclick="genC()" title="New question">↻ New</button>
+      </div>
+      <input type="number" id="cap-ans" placeholder="Type your answer here..." style="margin-top:6px"/>
+    </div>
+    <div id="nq-lerr" class="nq-err"></div>
+    <button class="bp" style="width:100%;margin-bottom:12px" onclick="SL()" id="nq-lbtn">Sign In</button>
+    <p style="text-align:center;font-size:12px;color:#6B7280"><span id="nq-lsw">New here? </span><a href="javascript:void(0)" id="nq-lml" onclick="TLM()" style="color:#6D28D9;font-weight:700">Sign Up</a></p>
+  </div>
+</div>
+
+<!-- ADMIN LOGIN MODAL -->
+<div id="nq-am" class="nq-ml">
+  <div class="nq-mo">
+    <button class="nq-mx" onclick="CAL()">✕</button>
+    <div style="text-align:center;margin-bottom:16px"><div style="font-size:48px;margin-bottom:8px">🔐</div><h2>Admin Access</h2><p class="sub">Enter your administrator credentials.</p></div>
+    <div class="nq-fg"><label>Admin Password</label><input type="password" id="nq-apw" placeholder="••••••••" onkeydown="if(event.key==='Enter')SAL()"/></div>
+    <!-- Admin CAPTCHA -->
+    <div class="nq-cap">
+      <div class="nq-cap-title">🤖 Security Check</div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <div class="nq-cap-q">🍪 <span id="aca">?</span> <span style="color:#9CA3AF;font-size:16px">×</span> <span id="acb">?</span> <span style="color:#9CA3AF;font-size:16px">=</span> <span style="color:#EC4899">?</span></div>
+        <button class="nq-cap-ref" onclick="genAC()" title="New">↻</button>
+      </div>
+      <input type="number" id="acap-ans" placeholder="Your answer..." style="margin-top:6px" onkeydown="if(event.key==='Enter')SAL()"/>
+    </div>
+    <div id="nq-aerr" class="nq-err"></div>
+    <button class="bp" style="width:100%" onclick="SAL()">Access Dashboard</button>
+  </div>
+</div>
+
+<!-- EDIT PRODUCT MODAL -->
+<div id="nq-em" class="nq-ml">
+  <div class="nq-mo" style="max-width:460px">
+    <button class="nq-mx" onclick="CEM()">✕</button>
+    <h2 style="margin-bottom:16px">Edit Product ✏️</h2>
+    <input type="hidden" id="ei"/>
+    <div class="nq-fg"><label>Product Name</label><input id="en"/></div>
+    <div class="nq-fg"><label>Description</label><textarea id="ed"></textarea></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      <div class="nq-fg"><label>Price (₹)</label><input type="number" id="ep"/></div>
+      <div class="nq-fg"><label>Stock</label><input type="number" id="es"/></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      <div class="nq-fg"><label>Category</label><input id="ec"/></div>
+      <div class="nq-fg"><label>Emoji (fallback)</label><input id="ee" style="font-size:20px"/></div>
+    </div>
+    <!-- Image Upload -->
+    <div class="nq-fg">
+      <label>Cookie Photo</label>
+      <div style="display:flex;align-items:center;gap:12px;margin-top:4px">
+        <div class="img-prev-box" id="ei-box">
+          <span id="ei-ep">🍪</span>
+          <img id="ei-ip" alt="preview"/>
+        </div>
+        <div>
+          <label class="img-up-btn" for="ei-fi">📷 Upload Photo</label>
+          <input type="file" id="ei-fi" accept="image/*" style="display:none" onchange="handleImg(event)"/>
+          <input type="hidden" id="ei-iv"/>
+          <p style="font-size:10px;color:#9CA3AF;margin-top:6px">JPG, PNG, WEBP</p>
+          <button id="ei-clr" onclick="clearImg()" style="background:none;border:none;color:#EF4444;font-size:11px;font-weight:700;cursor:pointer;margin-top:2px;display:none;font-family:'Quicksand',sans-serif">✕ Remove photo</button>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;margin-top:4px"><button class="bp" onclick="SEP()">💾 Save Changes</button><button class="bs" onclick="CEM()">Cancel</button></div>
+  </div>
+</div>
+
+<footer class="nq-foot">
+  <h3>🍪 Nique's Cookie</h3>
+  <p style="font-size:12px;opacity:.7;margin-bottom:14px">Made with love & butter. © 2026 All rights reserved.</p>
+  <div id="nq-fl" style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap"></div>
+</footer>
+</div>
+
+<script>
+const _V=p=>p==='nique2025';
+let SI={name:"Nique's Cookie",tagline:"Baked with love, delivered with joy ✨",heroDesc:"Handcrafted cookies made fresh daily, delivered to your door. Premium ingredients, unforgettable flavours.",ann:"🎉 Free delivery on orders above ₹500! Use SWEET10 for 10% off your first order.",ig:"https://instagram.com/niquescookie",wa:"https://wa.me/+919876543210",em:"mailto:hello@niquescookie.com"};
+let prods=[
+  {id:1,name:"Classic Chocolate Chip",price:149,stock:50,sold:42,emoji:"🍪",image:"",desc:"Rich, buttery cookie loaded with premium chocolate chips. Our bestseller since day one!",cat:"Classic"},
+  {id:2,name:"Double Fudge Brownie",price:179,stock:30,sold:28,emoji:"🍫",image:"",desc:"Intensely chocolatey with a fudgy centre. A dream for every chocolate lover.",cat:"Premium"},
+  {id:3,name:"Strawberry Cream Swirl",price:159,stock:25,sold:15,emoji:"🍓",image:"",desc:"Light and fruity with a beautiful strawberry cream filling and vanilla glaze.",cat:"Fruity"},
+  {id:4,name:"Lemon Zest Glaze",price:139,stock:40,sold:20,emoji:"🍋",image:"",desc:"Bright citrus flavour with a tangy lemon glaze drizzle. Refreshingly delicious!",cat:"Fruity"},
+  {id:5,name:"Oreo Crumble Delight",price:199,stock:20,sold:35,emoji:"🖤",image:"",desc:"Loaded with crushed Oreos and a cream cheese swirl. Decadently perfect.",cat:"Premium"},
+  {id:6,name:"Rainbow Sprinkle Fiesta",price:149,stock:35,sold:18,emoji:"🌈",image:"",desc:"Fun, colourful, and full of joy. Perfect for birthdays and celebrations!",cat:"Fun"},
+  {id:7,name:"Salted Caramel Crunch",price:189,stock:8,sold:30,emoji:"✨",image:"",desc:"Sweet and salty perfection with a caramel drizzle and flakes of sea salt.",cat:"Premium"},
+  {id:8,name:"Peanut Butter Classic",price:145,stock:45,sold:25,emoji:"🥜",image:"",desc:"Thick, rich peanut butter cookie with a classic crisscross pattern.",cat:"Classic"},
+];
+let revs=[
+  {id:1,name:"Priya S.",rating:5,comment:"Absolutely divine! The chocolate chip melted in my mouth. Best cookies ever!",date:"May 1, 2026",ok:true},
+  {id:2,name:"Rahul M.",rating:5,comment:"Best cookies I've ever ordered online. Super fast delivery and beautifully packaged!",date:"May 3, 2026",ok:true},
+  {id:3,name:"Anjali K.",rating:4,comment:"Loved the Strawberry Cream Swirl so much. Will definitely be ordering again soon!",date:"May 8, 2026",ok:true},
+];
+let cart=[],cu=null,isAdm=false,vc=247,lm='login',af='All',aTab='ov',eid=null,nrr=5,tT;
+let cA,cB,acA,acB;
+
+// ── Intro + rain ──
+window.addEventListener('load',()=>{
+  const em=['🍪','🍫','🎂','🍰','🧁','🍪','🍪'];
+  const rain=[];
+  for(let i=0;i<26;i++){
+    const e=document.createElement('span');
+    e.className='nq-part';e.textContent=em[~~(Math.random()*em.length)];
+    e.style.left=(Math.random()*100)+'%';e.style.fontSize=(16+Math.random()*22)+'px';
+    e.style.animationDuration=(4+Math.random()*7)+'s';e.style.animationDelay=(Math.random()*9)+'s';
+    document.getElementById('nq').appendChild(e);rain.push(e);
+  }
+  setTimeout(()=>{document.getElementById('nq-ie').classList.add('show');document.getElementById('nq-in').classList.add('show')},200);
+  setTimeout(()=>{document.getElementById('nq-intro').classList.add('gone');rain.forEach(e=>e.classList.add('bg'))},3200);
+  genC();genAC();RA();
+});
+function RA(){RBS();RFT();RP();RRV();RRVF();RCon();RF();}
+
+// ── CAPTCHA ──
+function genC(){cA=~~(Math.random()*9)+1;cB=~~(Math.random()*9)+1;const a=document.getElementById('ca'),b=document.getElementById('cb');if(a)a.textContent=cA;if(b)b.textContent=cB;const i=document.getElementById('cap-ans');if(i)i.value='';}
+function genAC(){acA=~~(Math.random()*9)+1;acB=~~(Math.random()*9)+1;const a=document.getElementById('aca'),b=document.getElementById('acb');if(a)a.textContent=acA;if(b)b.textContent=acB;const i=document.getElementById('acap-ans');if(i)i.value='';}
+function chkC(){const v=parseInt(document.getElementById('cap-ans').value);return v===cA+cB;}
+function chkAC(){const v=parseInt(document.getElementById('acap-ans').value);return v===acA*acB;}
+
+// ── Nav ──
+function P(pg){
+  document.querySelectorAll('.nq-pg').forEach(p=>p.classList.remove('act'));
+  ['nh','nm','nc'].forEach(id=>{const b=document.getElementById('nq-'+id);if(b)b.classList.remove('act')});
+  document.getElementById('pg-'+pg).classList.add('act');
+  const nb=document.getElementById('nq-n'+pg[0]);if(nb)nb.classList.add('act');
+  if(pg==='cart')RC2();if(pg==='admin'&&isAdm)AAT(aTab);
+}
+
+// ── Image helpers ──
+function pImgH(p,h=150){
+  if(p.image)return`<div style="height:${h}px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#FFF9F0,#F3E8FF)"><img src="${p.image}" style="width:100%;height:100%;object-fit:cover"/></div>`;
+  return`<div style="height:${h}px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#FFF9F0,#F3E8FF);font-size:${h>80?60:44}px">${p.emoji}</div>`;
+}
+
+// ── Bestsellers ──
+function RBS(){
+  const s=[...prods].sort((a,b)=>b.sold-a.sold).slice(0,4);
+  document.getElementById('nq-bs').innerHTML=s.map(p=>`
+    <div class="nq-bs">
+      <div class="nq-bsimg">${p.image?`<img src="${p.image}" style="width:100%;height:100%;object-fit:cover"/>`:`<span style="font-size:38px">${p.emoji}</span>`}</div>
+      <p style="font-weight:700;color:#1F2937;font-size:13px;margin-bottom:3px">${p.name}</p>
+      <p style="font-family:'Pacifico',cursive;color:#6D28D9;font-size:15px">₹${p.price}</p>
+      <p style="font-size:10px;color:#9CA3AF">${p.sold} sold</p>
+    </div>`).join('');
+}
+
+// ── Filters ──
+function RFT(){
+  const cats=['All',...new Set(prods.map(p=>p.cat))];
+  document.getElementById('nq-ftabs').innerHTML=cats.map(c=>`<button class="nq-ftb${c===af?' act':''}" onclick="SF('${c}')">${c}</button>`).join('');
+}
+function SF(c){af=c;RFT();RP();}
+
+// ── Products ──
+function RP(){
+  const fl=af==='All'?prods:prods.filter(p=>p.cat===af);
+  document.getElementById('nq-pgrid').innerHTML=fl.map(p=>{
+    const sc=p.stock===0?'nq-out':p.stock<10?'nq-lw':'nq-ok';
+    const sl=p.stock===0?'Sold Out':p.stock<10?`Only ${p.stock} left!`:`${p.stock} in stock`;
+    return`<div class="nq-pc${p.stock===0?' so':''}">
+      ${pImgH(p)}
+      <div class="nq-pb">
+        <span class="nq-stg ${sc}">${sl}</span>
+        <h3 class="nq-pn">${p.name}</h3>
+        <p class="nq-pd">${p.desc}</p>
+        <div class="nq-pf">
+          <span class="nq-pp">₹${p.price}</span>
+          <button class="bp bsm" ${p.stock===0?'disabled':''} onclick="ATC(${p.id})">${p.stock===0?'Sold Out':'Add to Cart'}</button>
+        </div>
+        <p class="nq-ps">🏆 ${p.sold} sold</p>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ── Cart ──
+function ATC(id){if(!cu){OL();return;}const p=prods.find(x=>x.id===id);if(!p||p.stock===0)return;const ex=cart.find(i=>i.id===id);if(ex)ex.qty++;else cart.push({...p,qty:1});UCB();toast(`${p.emoji} Added to cart!`);}
+function UCB(){const n=cart.reduce((s,i)=>s+i.qty,0);const b=document.getElementById('nq-bd');b.textContent=n;b.style.display=n>0?'flex':'none';}
+function RC2(){
+  const el=document.getElementById('nq-cc');
+  if(!cart.length){el.innerHTML=`<div class="nq-sc"><span class="nq-si">🛒</span><h2 style="color:#6D28D9;font-family:'Pacifico',cursive;margin-bottom:10px">Your cart is empty</h2><p style="color:#6B7280;margin-bottom:22px">Add some delicious cookies!</p><button class="bp" onclick="P('menu')">Browse Menu</button></div>`;return;}
+  const tot=cart.reduce((s,i)=>s+i.price*i.qty,0);
+  el.innerHTML=cart.map(item=>`
+    <div class="nq-ci">
+      <div style="width:56px;height:56px;border-radius:12px;overflow:hidden;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:#FFF9F0">${item.image?`<img src="${item.image}" style="width:100%;height:100%;object-fit:cover"/>`:`<span style="font-size:30px">${item.emoji}</span>`}</div>
+      <div style="flex:1;min-width:80px"><h4 style="font-size:14px;font-weight:700;margin-bottom:3px">${item.name}</h4><p style="color:#6D28D9;font-weight:700;font-size:13px">₹${item.price}</p></div>
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+        <button class="nq-qb" onclick="CQ(${item.id},-1)">−</button>
+        <span style="font-weight:800;min-width:18px;text-align:center">${item.qty}</span>
+        <button class="nq-qb" onclick="CQ(${item.id},1)">+</button>
+        <span style="font-weight:700;color:#6D28D9;min-width:50px;text-align:right">₹${item.price*item.qty}</span>
+        <button style="background:none;border:none;font-size:16px;cursor:pointer;color:#EF4444" onclick="RFC(${item.id})">🗑️</button>
+      </div>
+    </div>`).join('')+`
+  <div style="background:rgba(255,255,255,.93);border-radius:20px;padding:20px;box-shadow:0 8px 32px rgba(109,40,217,.12);border:1px solid rgba(139,92,246,.14)">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+      <span style="font-weight:700">Total</span>
+      <span style="font-family:'Pacifico',cursive;font-size:24px;color:#6D28D9">₹${tot}</span>
+    </div>
+    <button class="bp" style="width:100%" onclick="PCO()">Proceed to Checkout →</button>
+  </div>`;
+}
+function CQ(id,d){const i=cart.find(x=>x.id===id);if(!i)return;i.qty+=d;if(i.qty<=0)cart=cart.filter(x=>x.id!==id);UCB();RC2();}
+function RFC(id){cart=cart.filter(i=>i.id!==id);UCB();RC2();}
+function PCO(){
+  if(!cu){OL();return;}
+  const tot=cart.reduce((s,i)=>s+i.price*i.qty,0);
+  const items=cart.map(i=>`<div style="display:flex;justify-content:space-between;font-size:12px;color:#6B7280;margin-bottom:4px"><span>${i.emoji} ${i.name} × ${i.qty}</span><span>₹${i.price*i.qty}</span></div>`).join('');
+  document.getElementById('nq-cc').innerHTML=`
+    <div class="nq-card" style="max-width:520px">
+      <div class="nq-pv"><p style="font-size:11px;opacity:.7;margin-bottom:2px">ORDER TOTAL</p><p style="font-family:'Pacifico',cursive;font-size:32px">₹${tot}</p></div>
+      <div style="background:#F9FAFB;border-radius:12px;padding:13px;margin-bottom:16px">${items}<div style="border-top:1px solid #E5E7EB;margin-top:8px;padding-top:8px;display:flex;justify-content:space-between;font-weight:700;font-size:13px"><span>Total</span><span style="color:#6D28D9">₹${tot}</span></div></div>
+      <div class="nq-fg"><label>Card Number</label><input placeholder="1234 5678 9012 3456" maxlength="19"/></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><div class="nq-fg"><label>Expiry</label><input placeholder="MM/YY"/></div><div class="nq-fg"><label>CVV</label><input type="password" placeholder="•••" maxlength="4"/></div></div>
+      <div class="nq-fg"><label>Cardholder Name</label><input placeholder="Name on card"/></div>
+      <div class="nq-fg"><label>Delivery Address</label><input placeholder="Your full delivery address"/></div>
+      <button class="bp" style="width:100%;margin-bottom:10px" onclick="PLO()">🔒 Pay ₹${tot} Securely</button>
+      <button class="bs" style="width:100%" onclick="RC2()">← Back to Cart</button>
+    </div>`;
+}
+function PLO(){
+  cart.forEach(ci=>{const p=prods.find(x=>x.id===ci.id);if(p){p.stock=Math.max(0,p.stock-ci.qty);p.sold+=ci.qty;}});
+  cart=[];UCB();RP();RBS();
+  document.getElementById('nq-cc').innerHTML=`<div class="nq-sc"><span class="nq-si">🎉</span><h2 style="color:#6D28D9;font-family:'Pacifico',cursive;font-size:30px;margin-bottom:10px">Order Placed!</h2><p style="color:#6B7280;margin-bottom:5px">Your cookies are being baked fresh! 🍪</p><p style="color:#6B7280;font-size:13px;margin-bottom:24px">Delivery in 2–4 hours. Confirmation sent to email.</p><button class="bp" onclick="P('menu')">Order More Cookies</button></div>`;
+}
+
+// ── Reviews ──
+function RRV(){
+  const ok=revs.filter(r=>r.ok);
+  document.getElementById('nq-rvg').innerHTML=ok.map(r=>`
+    <div class="nq-rv">
+      <div style="display:flex;justify-content:space-between;margin-bottom:7px">
+        <span style="font-weight:700;font-size:14px">${r.name}</span>
+        <span class="nq-stars">${'★'.repeat(r.rating)}<span class="nq-ste">${'★'.repeat(5-r.rating)}</span></span>
+      </div>
+      <p style="color:#6B7280;font-size:13px;line-height:1.6;margin-bottom:6px">"${r.comment}"</p>
+      <p style="font-size:11px;color:#9CA3AF">${r.date}</p>
+    </div>`).join('')||'<p style="color:#6B7280;text-align:center">No reviews yet. Be the first!</p>';
+}
+function RRVF(){
+  const el=document.getElementById('nq-rvf');
+  if(cu){el.innerHTML=`<div class="nq-card" style="max-width:500px"><h3 style="color:#6D28D9;margin-bottom:13px;font-size:18px">Leave a Review ⭐</h3><div style="display:flex;gap:6px;margin-bottom:13px" id="nq-ss">${[1,2,3,4,5].map(n=>`<span style="font-size:26px;cursor:pointer" onclick="SRR(${n})" id="rs${n}">${n<=nrr?'⭐':'☆'}</span>`).join('')}</div><div class="nq-fg"><label>Your Review</label><textarea id="rt" placeholder="Share your experience..."></textarea></div><button class="bp" onclick="SR()">Submit Review</button></div>`;}
+  else{el.innerHTML=`<div class="nq-card" style="max-width:320px;text-align:center;padding:24px"><p style="color:#6B7280;margin-bottom:13px;font-size:14px">Sign in to leave a review</p><button class="bp bsm" onclick="OL()">Sign In</button></div>`;}
+}
+function SRR(n){nrr=n;for(let i=1;i<=5;i++){const e=document.getElementById('rs'+i);if(e)e.textContent=i<=n?'⭐':'☆';}}
+function SR(){const t=document.getElementById('rt').value.trim();if(!t){toast('Please write a review!');return;}revs.push({id:Date.now(),name:cu.name,rating:nrr,comment:t,date:new Date().toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'}),ok:true});nrr=5;RRV();RRVF();toast('Thank you for your review! 💜');}
+
+// ── Contact ──
+function RCon(){
+  document.getElementById('nq-clk').innerHTML=[
+    {icon:'📧',lbl:'Email Us',desc:SI.em.replace('mailto:',''),href:SI.em,c:'#7C3AED'},
+    {icon:'💬',lbl:'WhatsApp',desc:'Chat with us instantly',href:SI.wa,c:'#25D366'},
+    {icon:'📸',lbl:'Instagram',desc:'@niquescookie',href:SI.ig,c:'#E1306C'},
+  ].map(x=>`<a class="nq-cl" href="${x.href}" target="_blank" rel="noopener noreferrer" onmouseenter="this.style.borderColor='${x.c}'" onmouseleave="this.style.borderColor='transparent'"><div style="font-size:48px;margin-bottom:12px">${x.icon}</div><h3 style="color:#1F2937;margin-bottom:7px;font-size:18px">${x.lbl}</h3><p style="color:${x.c};font-weight:700;font-size:13px">${x.desc}</p></a>`).join('');
+}
+function RF(){document.getElementById('nq-fl').innerHTML=`<a href="${SI.ig}" target="_blank" style="color:#fff;text-decoration:none;font-size:12px;opacity:.8;font-weight:700">📸 Instagram</a><a href="${SI.wa}" target="_blank" style="color:#fff;text-decoration:none;font-size:12px;opacity:.8;font-weight:700">💬 WhatsApp</a><a href="${SI.em}" style="color:#fff;text-decoration:none;font-size:12px;opacity:.8;font-weight:700">📧 Email</a>`;}
+
+// ── Login ──
+function OL(){document.getElementById('nq-lm').classList.add('open');lm='login';ULM();genC();}
+function CL(){document.getElementById('nq-lm').classList.remove('open');SE('nq-lerr','',true);}
+function TLM(){lm=lm==='login'?'signup':'login';ULM();}
+function ULM(){
+  const s=lm==='signup';
+  document.getElementById('nq-lmt').textContent=s?'Join the Family! 🎉':'Welcome Back! 🍪';
+  document.getElementById('nq-lms').textContent=s?'Create your account for a sweet experience':'Sign in to place your order and track it';
+  document.getElementById('nq-snf').style.display=s?'block':'none';
+  document.getElementById('nq-lbtn').textContent=s?'Create Account':'Sign In';
+  document.getElementById('nq-lsw').textContent=s?'Already have an account? ':'New here? ';
+  document.getElementById('nq-lml').textContent=s?'Sign In':'Sign Up';
+  SE('nq-lerr','',true);
+}
+function SL(){
+  const e=document.getElementById('le').value.trim();
+  const p=document.getElementById('lp').value;
+  const n=document.getElementById('ln').value.trim();
+  if(!e||!p){SE('nq-lerr','Please fill in all fields.');return;}
+  if(!e.includes('@')){SE('nq-lerr','Please enter a valid email.');return;}
+  if(!chkC()){SE('nq-lerr','❌ CAPTCHA wrong! Solve the cookie math and try again.');genC();return;}
+  cu={name:n||e.split('@')[0],email:e};vc++;
+  document.getElementById('nq-vc').textContent=`👥 ${vc} online`;
+  CL();document.getElementById('nq-ub').textContent=`👤 ${cu.name.split(' ')[0]}`;
+  toast(`Welcome, ${cu.name.split(' ')[0]}! 🍪`);RRVF();
+}
+function gLg(){
+  if(!chkC()){SE('nq-lerr','❌ CAPTCHA wrong! Solve the cookie math first.');genC();return;}
+  cu={name:'Google User',email:'user@gmail.com'};vc++;
+  document.getElementById('nq-vc').textContent=`👥 ${vc} online`;
+  CL();document.getElementById('nq-ub').textContent='👤 Google User';
+  toast('Signed in with Google! 🍪');RRVF();
+}
+
+// ── Admin ──
+function OAL(){if(isAdm){P('admin');AAT(aTab);return;}document.getElementById('nq-am').classList.add('open');document.getElementById('nq-apw').value='';SE('nq-aerr','',true);genAC();}
+function CAL(){document.getElementById('nq-am').classList.remove('open');}
+function SAL(){
+  const pw=document.getElementById('nq-apw').value;
+  if(!chkAC()){SE('nq-aerr','❌ Security check failed! Try again.');genAC();return;}
+  if(_V(pw)){isAdm=true;CAL();P('admin');AAT('ov');toast('Welcome back, Admin! 👑');}
+  else{SE('nq-aerr','❌ Incorrect password. Access denied.');document.getElementById('nq-apw').value='';}
+}
+function aOut(){isAdm=false;P('home');}
+function AT(t){aTab=t;document.querySelectorAll('.nq-at').forEach(b=>b.classList.remove('act'));document.querySelectorAll('.nq-at').forEach(b=>{if(b.getAttribute('onclick').includes(`'${t}'`))b.classList.add('act');});AAT(t);}
+function AAT(t){if(!isAdm)return;const el=document.getElementById('nq-adc');if(t==='ov')AOV(el);if(t==='pr')APR(el);if(t==='rv')ARV(el);if(t==='st')AST(el);}
+function AOV(el){
+  const ts=prods.reduce((s,p)=>s+p.sold,0),tr=prods.reduce((s,p)=>s+p.sold*p.price,0);
+  el.innerHTML=`<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-bottom:26px">
+    <div class="nq-stat"><div class="nq-snum" style="color:#6D28D9">${vc}</div><div class="nq-slbl">Visitors Today</div></div>
+    <div class="nq-stat"><div class="nq-snum" style="color:#EC4899">${ts}</div><div class="nq-slbl">Cookies Sold</div></div>
+    <div class="nq-stat"><div class="nq-snum" style="color:#F59E0B">₹${tr.toLocaleString()}</div><div class="nq-slbl">Revenue</div></div>
+    <div class="nq-stat"><div class="nq-snum" style="color:#10B981">${revs.length}</div><div class="nq-slbl">Reviews</div></div>
+  </div>
+  <div class="nq-card"><h3 style="color:#6D28D9;margin-bottom:16px">📦 Stock Overview</h3>${prods.map(p=>{const tot=p.stock+p.sold||1;const pct=~~(p.stock/tot*100);const bc=p.stock===0?'#EF4444':p.stock<10?'#F59E0B':'#6D28D9';return`<div style="display:flex;align-items:center;gap:10px;margin-bottom:11px"><div style="width:36px;height:36px;border-radius:10px;overflow:hidden;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:#FFF9F0">${p.image?`<img src="${p.image}" style="width:100%;height:100%;object-fit:cover"/>`:`<span style="font-size:20px">${p.emoji}</span>`}</div><span style="flex:1;font-weight:700;font-size:13px;min-width:100px">${p.name}</span><span style="font-size:11px;color:#9CA3AF;min-width:55px;text-align:right">${p.sold} sold</span><div class="nq-sbw"><div class="nq-sbr" style="width:${pct}%;background:${bc}"></div></div><span style="font-size:12px;font-weight:800;color:${bc};min-width:28px;text-align:right">${p.stock}</span></div>`;}).join('')}</div>`;
+}
+function APR(el){
+  el.innerHTML=prods.map(p=>`
+    <div class="nq-pr">
+      <div style="width:46px;height:46px;border-radius:12px;overflow:hidden;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:#FFF9F0">${p.image?`<img src="${p.image}" style="width:100%;height:100%;object-fit:cover"/>`:`<span style="font-size:26px">${p.emoji}</span>`}</div>
+      <div style="flex:1;min-width:110px"><h4 style="font-size:14px;font-weight:700">${p.name}</h4><p style="font-size:11px;color:#6B7280">${p.cat}</p></div>
+      <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+        <div style="text-align:center"><p style="font-size:10px;color:#9CA3AF">Price</p><p style="font-weight:800;color:#6D28D9;font-size:14px">₹${p.price}</p></div>
+        <div style="text-align:center"><p style="font-size:10px;color:#9CA3AF">Stock</p><p style="font-weight:800;font-size:14px;color:${p.stock<10?'#EF4444':'#10B981'}">${p.stock}</p></div>
+        <div style="text-align:center"><p style="font-size:10px;color:#9CA3AF">Sold</p><p style="font-weight:800;font-size:14px">${p.sold}</p></div>
+        <button class="bgh" onclick="OEM(${p.id})">✏️ Edit</button>
+      </div>
+    </div>`).join('');
+}
+function ARV(el){
+  el.innerHTML=revs.map(r=>`
+    <div class="nq-ar">
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:6px">
+        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+          <span style="font-weight:700;font-size:14px">${r.name}</span>
+          <span style="color:#F59E0B;font-size:13px">${'★'.repeat(r.rating)}</span>
+          <span style="font-size:11px;color:#9CA3AF">${r.date}</span>
+          <span style="font-size:10px;padding:2px 9px;border-radius:10px;background:${r.ok?'#D1FAE5':'#FEF3C7'};color:${r.ok?'#065F46':'#92400E'};font-weight:700">${r.ok?'✓ Approved':'⏳ Pending'}</span>
+        </div>
+        <div style="display:flex;gap:6px"><button class="bgh" onclick="TRA(${r.id})">${r.ok?'Hide':'Approve'}</button><button class="bdg" onclick="DRV(${r.id})">Delete</button></div>
+      </div>
+      <p style="color:#6B7280;font-size:13px">"${r.comment}"</p>
+    </div>`).join('')||'<p style="color:#6B7280">No reviews yet.</p>';
+}
+function AST(el){
+  el.innerHTML=`<div class="nq-card" style="max-width:580px">
+    <h3 style="color:#6D28D9;margin-bottom:18px;font-size:18px">Shop Settings</h3>
+    <div class="nq-fg"><label>Shop Name</label><input id="ss-n" value="${SI.name}"/></div>
+    <div class="nq-fg"><label>Tagline</label><input id="ss-t" value="${SI.tagline}"/></div>
+    <div class="nq-fg"><label>Hero Description</label><textarea id="ss-h">${SI.heroDesc}</textarea></div>
+    <div class="nq-fg"><label>Announcement Banner</label><input id="ss-a" value="${SI.ann}"/></div>
+    <div class="nq-fg"><label>WhatsApp Link</label><input id="ss-w" value="${SI.wa}"/></div>
+    <div class="nq-fg"><label>Instagram Link</label><input id="ss-i" value="${SI.ig}"/></div>
+    <div class="nq-fg"><label>Email (with mailto:)</label><input id="ss-e" value="${SI.em}"/></div>
+    <button class="bp" onclick="SSS()">💾 Save All Settings</button>
+  </div>`;
+}
+function SSS(){
+  SI.name=document.getElementById('ss-n').value;SI.tagline=document.getElementById('ss-t').value;SI.heroDesc=document.getElementById('ss-h').value;SI.ann=document.getElementById('ss-a').value;SI.wa=document.getElementById('ss-w').value;SI.ig=document.getElementById('ss-i').value;SI.em=document.getElementById('ss-e').value;
+  document.getElementById('nq-ann').textContent=SI.ann;document.getElementById('nq-hname').textContent=SI.name;document.getElementById('nq-htag').textContent=SI.tagline;document.getElementById('nq-hdesc').textContent=SI.heroDesc;document.querySelector('.nq-logo').textContent='🍪 '+SI.name;document.querySelector('.nq-foot h3').textContent='🍪 '+SI.name;
+  RCon();RF();toast('Settings saved! ✅');
+}
+function TRA(id){const r=revs.find(x=>x.id===id);if(r){r.ok=!r.ok;ARV(document.getElementById('nq-adc'));RRV();}}
+function DRV(id){revs=revs.filter(r=>r.id!==id);ARV(document.getElementById('nq-adc'));RRV();toast('Review deleted.');}
+
+// ── Edit Product Modal ──
+function OEM(id){
+  const p=prods.find(x=>x.id===id);if(!p)return;eid=id;
+  document.getElementById('ei').value=id;document.getElementById('en').value=p.name;document.getElementById('ed').value=p.desc;document.getElementById('ep').value=p.price;document.getElementById('es').value=p.stock;document.getElementById('ec').value=p.cat;document.getElementById('ee').value=p.emoji;
+  document.getElementById('ei-iv').value=p.image||'';
+  const ep=document.getElementById('ei-ep'),ip=document.getElementById('ei-ip'),clr=document.getElementById('ei-clr');
+  if(p.image){ep.style.display='none';ip.src=p.image;ip.style.display='block';clr.style.display='block';}else{ep.style.display='';ip.style.display='none';clr.style.display='none';}
+  document.getElementById('nq-em').classList.add('open');
+}
+function CEM(){document.getElementById('nq-em').classList.remove('open');}
+function handleImg(e){
+  const file=e.target.files[0];if(!file)return;
+  if(file.size>5*1024*1024){toast('Image too large! Max 5MB.');return;}
+  const reader=new FileReader();
+  reader.onload=ev=>{
+    const ip=document.getElementById('ei-ip'),ep=document.getElementById('ei-ep'),clr=document.getElementById('ei-clr');
+    ip.src=ev.target.result;ip.style.display='block';ep.style.display='none';clr.style.display='block';
+    document.getElementById('ei-iv').value=ev.target.result;
+  };reader.readAsDataURL(file);
+}
+function clearImg(){
+  document.getElementById('ei-ip').style.display='none';document.getElementById('ei-ep').style.display='';document.getElementById('ei-clr').style.display='none';document.getElementById('ei-iv').value='';document.getElementById('ei-fi').value='';
+}
+function SEP(){
+  const p=prods.find(x=>x.id===eid);if(!p)return;
+  p.name=document.getElementById('en').value;p.desc=document.getElementById('ed').value;p.price=parseInt(document.getElementById('ep').value)||p.price;p.stock=parseInt(document.getElementById('es').value)||0;p.cat=document.getElementById('ec').value;p.emoji=document.getElementById('ee').value;
+  const img=document.getElementById('ei-iv').value;p.image=img||'';
+  CEM();AAT(aTab);RP();RBS();toast('Product updated! ✅');
+}
+
+// ── Helpers ──
+function toast(msg){const el=document.getElementById('nq-toast');el.textContent=msg;el.classList.add('show');clearTimeout(tT);tT=setTimeout(()=>el.classList.remove('show'),2800);}
+function SE(id,msg,hide=false){const el=document.getElementById(id);if(!el)return;el.textContent=msg;el.style.display=hide?'none':msg?'block':'none';}
+document.querySelectorAll('.nq-ml').forEach(ol=>{ol.addEventListener('click',e=>{if(e.target===ol){ol.classList.remove('open');SE('nq-lerr','',true);SE('nq-aerr','',true);}});});
+</script>
